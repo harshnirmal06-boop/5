@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<!--
+  ESTILO: ONE-PAGE WEBSITE (HTML + CSS + JS are all in this one file)
+
+  WHAT TO EDIT:
+    1. IMAGE LINKS + CONTACT DETAILS ... right below, at the very top of the file
+    2. COLOURS ......................... search  "COLOURS"  (the :root block)
+    3. TEXT ............................ search  "PAGE CONTENT"  and edit the words
+
+  Everything else works by itself. No need to touch the rest.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0B0B10">
+  <title>Estilo | Models, Events and Studio Production</title>
+  <meta name="description" content="Estilo is a modelling, event entertainment and studio production agency. See our gallery and explore our services.">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+<!-- ====================================================================== -->
+<!-- ===== 1. EDIT HERE FIRST: YOUR IMAGE LINKS AND CONTACT DETAILS ======= -->
+<!-- ====================================================================== -->
+<script>
+
+/* ------------------------------------------------------------------------
+   HOW TO ADD A PHOTO (very simple)
+
+   1. Find the line of the photo you want. Example: "Modeling photo 1".
+   2. Paste your image link between the two quote marks.
+        Before:  '',
+        After:   'https://your-website.com/photos/model1.jpg',
+   3. Save the file and refresh the browser. Done.
+
+   IMPORTANT
+   - Use a DIRECT image link (it ends with .jpg, .jpeg, .png or .webp).
+     A page link from Instagram or Google Drive will not work.
+   - Or put the photo file in the same folder as this index.html and write only
+     its name, for example:  'model1.jpg'
+   - Leave '' empty to show a box that says "Add image link".
+   - Keep the comma at the end of every line (except the last one in a list).
+   ------------------------------------------------------------------------ */
+
+var PHOTOS = {
+
+  // ---------- MODELING PHOTOS (14) ----------
+  modeling: [
+    'gallery/studio 1.jpeg',   // Modeling photo 1
+    'gallery/studio 2.jpeg',   // Modeling photo 2
+    'gallery/studio 3.jpeg',   // Modeling photo 3
+    'gallery/studio 4.jpeg',   // Modeling photo 4
+    'gallery/studio 5.jpeg',   // Modeling photo 5
+    'gallery/studio 6.jpeg',   // Modeling photo 6
+    'gallery/studio 7.jpeg',   // Modeling photo 7
+    'gallery/studio 8.jpeg',   // Modeling photo 8
+    'gallery/studio 9.jpeg',   // Modeling photo 9
+    'gallery/studio 10.jpeg',   // Modeling photo 10
+    'gallery/studio 11.jpeg',   // Modeling photo 11
+    'gallery/studio 12.jpeg',   // Modeling photo 12
+    'gallery/studio 13.jpeg',   // Modeling photo 13
+    'gallery/studio 14.jpeg'    // Modeling photo 14
+  ],
+
+  // ---------- STUDIO PHOTOS (14) ----------
+  studio: [
+    'gallery/model 1.jpeg',   // Studio photo 1
+    'gallery/model 2.jpeg',   // Studio photo 2
+    'gallery/model 3.jpeg',   // Studio photo 3
+    'gallery/model 4.jpeg',   // Studio photo 4
+    'gallery/model 5.jpeg',   // Studio photo 5
+    'gallery/model 6.jpeg',   // Studio photo 6
+    'gallery/model 7.jpeg',   // Studio photo 7
+    'gallery/model 8.jpeg',   // Studio photo 8
+    'gallery/model 9.jpeg',   // Studio photo 9
+    'gallery/model 10.jpeg',   // Studio photo 10
+    'gallery/model 11.jpeg',   // Studio photo 11
+    'gallery/model 12.jpeg',   // Studio photo 12
+    'gallery/model 13.jpeg',   // Studio photo 13
+    'gallery/model 14.jpeg'    // Studio photo 14
+  ],
+
+  // ---------- EVENT PHOTOS (14) ----------
+  events: [
+    'gallery/event1.jpeg',   // Events photo 1
+    'gallery/event2.jpeg',   // Events photo 2
+    'gallery/event3.jpeg',   // Events photo 3
+    'gallery/event4.jpeg',   // Events photo 4
+    'gallery/event5.jpeg',   // Events photo 5
+    'gallery/event6.jpeg',   // Events photo 6
+    'gallery/event7.jpeg',   // Events photo 7
+    'gallery/event8.jpeg',   // Events photo 8
+    'gallery/event9.jpeg',   // Events photo 9
+    'gallery/event10.jpeg',   // Events photo 10
+    'gallery/event11.jpeg',   // Events photo 11
+    'gallery/event12.jpeg',   // Events photo 12
+    'gallery/event13.jpeg',   // Events photo 13
+    'gallery/event14.jpeg'    // Events photo 14
+  ]
+};
+
+
+/* ------------------------------------------------------------------------
+   CONTACT DETAILS (shown in the Contact section and used by WhatsApp buttons)
+   ------------------------------------------------------------------------ */
+
+var SITE = {
+  phone:     '+91 9811211149',
+  whatsapp:  '919811211149',                                 // country code + number, no + and no spaces
+  email:     'Info@estilosentertainment.com',
+
+  // ---------- LOGO ----------
+  // Paste your logo image link, or the file name if it is in the same folder (example: 'logo.png').
+  // Best size: 1200 x 352 px (shown at 230 x 68 px in the menu and 320 x 108 px in the footer). PNG, SVG or JPG.
+  logo:       'gallery/logo2.png',
+  // Logo for the black footer (a white or light version). Leave '' to use the same logo as the top.
+  logoFooter: 'gallery/logo2.png',
+
+  // ---------- OFFICE ADDRESS, MAP AND GST (edit these three) ----------
+  // Address: use \n to start a new line.
+  address:   'Estilo Entertainment\nKhasra No. 178, Sector 5, Rithala\nRohini, New Delhi, Delhi - 110085',
+  
+  // OPTIONAL, exact pin: Google Maps > your office > Share > "Embed a map" > copy ONLY the link inside src="..."
+  // Leave '' to use mapQuery above.
+  mapEmbed:  '',
+  // OPTIONAL: the "Share" link of your office from Google Maps (used by the "Get directions" button). Leave '' to use mapQuery.
+  mapLink:   'https://maps.app.goo.gl/oK9io65dR3Md5Mwi7',
+  // GST number of the company (15 characters). Leave '' to hide it.
+  gst:       '07AOCPA8280Q2ZI',
+
+  instagram: 'https://www.instagram.com/mmoohitmahuja',
+  facebook:  'https://www.facebook.com/share/1CHakWubKT/',       // paste your Facebook page link
+  youtube:   'https://youtube.com/@estiloentertainmenteventsm4440?si=wFHW4zPy69u74snA'        // paste your YouTube link (or '' to hide it)
+};
+
+</script>
+<!-- ===================== END OF THE PART YOU EDIT ======================= -->
+
+
+<style>
+/* ==========================================================================
+   COLOURS  (change the theme here; everything else follows)
+   Theme: red, black and warm cream. Red is the brand colour from the logo.
+   ========================================================================== */
+:root {
+  --ink: #0B0B10;            /* near-black: dark sections */
+  --ink-2: #16161D;          /* slightly lighter black */
+  --red: #D4202F;            /* brand red */
+  --red-dark: #A8111E;       /* red on hover */
+  --maroon: #6E0D18;         /* deep red for depth */
+  --blush: #FBE4E1;          /* very light red tint */
+  --cream: #FFF8F0;          /* warm page background */
+  --sand: #F3E9DC;           /* soft darker cream */
+  --white: #FFFFFF;
+  --text: #1A1A20;
+  --muted: #625C58;
+  --line: #E7DDD0;
+  --on-dark: #BFBCC6;        /* soft text on black */
+
+  --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --sans: 'Inter', 'Segoe UI', Arial, sans-serif;
+  --ease: cubic-bezier(.22, .8, .24, 1);
+  --side: clamp(18px, 4vw, 40px);
+  --section: clamp(64px, 9vw, 120px);
+  --gap: clamp(12px, 2vw, 24px);
+}
+
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font: 400 clamp(16px, .35vw + 14.6px, 18px)/1.7 var(--sans);
+  color: var(--text);
+  background-color: var(--cream);
+  /* very light paper grain so the cream feels printed, not flat */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+[hidden] { display: none !important; }
+a { color: inherit; text-decoration: none; }
+p { margin: 0 0 1em; }
+
+h1, h2, h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: -.012em;
+}
+
+:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; }
+
+.wrap {
+  width: 100%;
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: max(var(--side), env(safe-area-inset-left));
+}
+
+.skip {
+  position: absolute;
+  left: -999px;
+  top: 8px;
+  z-index: 200;
+  padding: 10px 16px;
+  background: var(--ink);
+  color: #fff;
+}
+.skip:focus { left: 8px; }
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+  font: 700 12.5px var(--sans);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+.eyebrow::before {
+  content: "";
+  width: 36px;
+  height: 2px;
+  background: currentColor;
+  transition: width .8s .1s var(--ease);
+}
+.hide .eyebrow::before { width: 0; }
+
+
+/* ==========================================================================
+   BUTTONS (a diagonal colour wipe on hover, like a hand-cut shape)
+   ========================================================================== */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 13px 28px;
+  overflow: hidden;
+  isolation: isolate;
+  border: 2px solid var(--red);
+  border-radius: 3px;
+  background: var(--red);
+  color: #fff;
+  font: 600 15.5px var(--sans);
+  letter-spacing: .02em;
+  cursor: pointer;
+  transition: color .3s, border-color .3s;
+}
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0 -16px;
+  z-index: -1;
+  background: var(--ink);
+  transform: translateX(-105%) skewX(-18deg);
+  transition: transform .5s var(--ease);
+}
+.btn:hover { border-color: var(--ink); }
+.btn:hover::before { transform: translateX(0) skewX(-18deg); }
+.btn i { font-style: normal; transition: transform .3s var(--ease); }
+.btn:hover i { transform: translateX(5px); }
+
+.btn.line { background: transparent; color: var(--ink); border-color: var(--ink); }
+.btn.line:hover { color: #fff; }
+
+.btn.sm { min-height: 42px; padding: 9px 20px; font-size: 14.5px; }
+
+.btn.wa-btn { background: #1FA855; border-color: #1FA855; }
+.btn.wa-btn:hover { border-color: var(--ink); }
+
+
+/* ==========================================================================
+   NAVIGATION + LOGO
+   ========================================================================== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding-top: env(safe-area-inset-top);
+  background: rgba(255, 248, 240, .93);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  transition: box-shadow .3s;
+}
+.nav.scrolled { box-shadow: 0 8px 26px rgba(11, 11, 16, .1); }
+
+.nav-in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  height: 112px;
+  transition: height .3s var(--ease);
+}
+.nav.scrolled .nav-in { height: 92px; }
+
+/* LOGO: the three coloured bars are the letter E, so they sit right next to STILO.
+   To move the bars closer or further away, change "gap" below. */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--ink);
+}
+.brand svg { flex: none; width: 26px; height: 20px; }
+.brand rect {
+  transform-box: fill-box;
+  transform-origin: left;
+  animation: bar .7s var(--ease) both;
+}
+.brand rect:nth-child(2) { animation-delay: .08s; }
+.brand rect:nth-child(3) { animation-delay: .16s; }
+@keyframes bar { from { transform: scaleX(0); } }
+
+/* LOGO SIZE: change the numbers below to make the logo bigger or smaller.
+   Upload a logo image (see LOGO in the config at the top).
+   Keep the width : height ratio about 3.4 : 1 so the logo is not squeezed.            */
+.logo-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 320px;                 /* TOP MENU logo width  */
+  height: 94px;                 /* TOP MENU logo height */
+  transition: width .3s var(--ease), height .3s var(--ease);
+}
+.nav.scrolled .logo-slot { width: 270px; height: 79px; }      /* a little smaller while scrolling */
+.foot .logo-slot { width: 460px; height: 150px; padding: 12px 16px; background: #fff; border-radius: 6px; }   /* FOOTER logo size (on a white tile, because the logo has a white background) */
+.nav .logo-slot img { mix-blend-mode: multiply; }             /* the logo's white background melts into the menu colour */
+.logo-slot img { width: auto; height: auto; max-width: 100%; max-height: 100%; object-fit: contain; }
+.logo-slot.empty {
+  border: 1.5px dashed currentColor;
+  border-radius: 3px;
+  font: 600 11px var(--sans);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  opacity: .6;
+}
+@media (max-width: 900px) {
+  .nav-in { height: 92px; }
+  .nav.scrolled .nav-in { height: 80px; }
+  .logo-slot, .nav.scrolled .logo-slot { width: 270px; height: 79px; }
+  .foot .logo-slot { width: 380px; height: 124px; }
+}
+@media (max-width: 640px) {
+  .nav-in { height: 80px; }
+  .nav.scrolled .nav-in { height: 72px; }
+  .logo-slot, .nav.scrolled .logo-slot { width: 220px; height: 64px; }
+  .foot .logo-slot { width: 320px; height: 104px; }
+}
+@media (max-width: 400px) {
+  .logo-slot, .nav.scrolled .logo-slot { width: 190px; height: 56px; }
+  .foot .logo-slot { width: 280px; height: 92px; }
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 3vw, 34px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav li a:not(.btn) {
+  position: relative;
+  padding: 8px 0;
+  font-weight: 500;
+  font-size: 15.5px;
+}
+.nav li a:not(.btn)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  height: 2px;
+  background: var(--red);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .35s var(--ease);
+}
+.nav li a:not(.btn):hover::after,
+.nav li a[aria-current="true"]::after { transform: scaleX(1); }
+
+.menu {
+  display: none;
+  width: 48px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: transparent;
+  cursor: pointer;
+}
+.menu span {
+  display: block;
+  height: 2px;
+  margin: 6px 12px;
+  background: var(--ink);
+  transition: transform .25s, opacity .2s;
+}
+.menu[aria-expanded="true"] span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.menu[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.menu[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+
+/* ==========================================================================
+   HERO (words only, no photo): Faces. Stages. Stories.
+   The three bars on the right are the three bars of the logo. They are links.
+   ========================================================================== */
+.hero { padding: clamp(40px, 7vw, 90px) 0 clamp(52px, 7vw, 84px); overflow: hidden; }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: clamp(32px, 6vw, 80px);
+  align-items: center;
+}
+
+.hero h1 {
+  position: relative;
+  font-size: clamp(54px, 11.2vw, 152px);
+  font-weight: 800;
+  line-height: .96;
+  letter-spacing: -.025em;
+}
+.ln { display: block; overflow: hidden; padding-bottom: .06em; }
+.ln > span {
+  display: block;
+  transform: translateY(112%);
+  animation: rise 1s var(--ease) forwards;
+}
+.ln:nth-child(2) > span { animation-delay: .12s; }
+.ln:nth-child(3) > span { animation-delay: .24s; }
+@keyframes rise { to { transform: none; } }
+.hero h1 .dot { color: var(--red); }
+
+/* hand-drawn underline under "Stories." */
+.squig {
+  position: absolute;
+  left: .03em;
+  bottom: -.1em;
+  width: 3.7em;
+  height: .2em;
+  overflow: visible;
+  fill: none;
+  stroke: var(--red);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: draw 1.1s 1.15s var(--ease) forwards;
+}
+@keyframes draw { to { stroke-dashoffset: 0; } }
+
+.up { animation: up .9s var(--ease) both; }
+@keyframes up { from { opacity: 0; transform: translateY(18px); } }
+
+.hero-lead {
+  max-width: 17em;
+  margin: clamp(30px, 4vw, 46px) 0 14px;
+  font: italic 600 clamp(21px, 2.5vw, 30px)/1.35 var(--serif);
+  color: var(--ink);
+}
+.hero-text { max-width: 31em; color: var(--muted); }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+
+.cue {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: clamp(30px, 5vw, 52px);
+  font: 700 11.5px var(--sans);
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.cue i {
+  width: 60px;
+  height: 2px;
+  background: var(--red);
+  transform-origin: left;
+  animation: cue 2.4s var(--ease) infinite;
+}
+@keyframes cue { 0% { transform: scaleX(0); } 55% { transform: scaleX(1); } 100% { transform: scaleX(1); opacity: 0; } }
+
+/* the three bars */
+.ebars { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
+.ebars a {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 4px 20px;
+  min-height: clamp(104px, 13vw, 138px);
+  padding: 0 clamp(20px, 3vw, 34px);
+  overflow: hidden;
+  background: var(--red);
+  color: #fff;
+  transform-origin: left;
+  animation: barin .9s var(--ease) both;
+  transition: transform .4s var(--ease), background .3s;
+}
+.ebars li:nth-child(1) a { animation-delay: .35s; }
+.ebars li:nth-child(2) a { animation-delay: .5s; background: var(--ink); }
+.ebars li:nth-child(3) a { animation-delay: .65s; }
+@keyframes barin { from { transform: scaleX(0); } }
+.ebars a:hover { transform: translateX(-12px); }
+.ebars li:nth-child(2) a:hover { background: var(--maroon); }
+.ebars li:nth-child(1) a:hover,
+.ebars li:nth-child(3) a:hover { background: var(--red-dark); }
+
+.ebars .k { grid-row: span 2; font: 700 14px var(--sans); opacity: .8; }
+.ebars b { font: 800 clamp(28px, 3.8vw, 46px)/1 var(--serif); }
+.ebars small { grid-column: 2; font: 600 12.5px var(--sans); letter-spacing: .16em; text-transform: uppercase; opacity: .85; }
+.ebars i {
+  grid-row: span 2;
+  grid-column: 3;
+  font-style: normal;
+  font-size: 28px;
+  transition: transform .35s var(--ease);
+}
+.ebars a:hover i { transform: translateX(8px); }
+
+
+/* ==========================================================================
+   TICKER (slow moving list of what we do; pauses on hover)
+   ========================================================================== */
+.ticker {
+  overflow: hidden;
+  padding: 16px 0;
+  background: var(--ink);
+  color: #fff;
+  border-top: 3px solid var(--red);
+}
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: tick 60s linear infinite;
+}
+.ticker span {
+  display: flex;
+  align-items: center;
+  font: 600 clamp(18px, 2vw, 23px) var(--serif);
+  white-space: nowrap;
+}
+.ticker span::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  margin: 0 clamp(20px, 3vw, 34px);
+  background: var(--red);
+  transform: rotate(45deg);
+}
+.ticker:hover .ticker-track { animation-play-state: paused; }
+@keyframes tick { to { transform: translateX(-50%); } }
+
+
+/* ==========================================================================
+   ABOUT (content only, no photos)
+   ========================================================================== */
+.about { padding: var(--section) 0; }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: clamp(32px, 7vw, 100px);
+  align-items: start;
+}
+.about h2 { font-size: clamp(40px, 6vw, 84px); font-weight: 800; line-height: 1; }
+.about-l { position: sticky; top: 110px; }
+.about-l h2 span { color: var(--red); }
+
+.lead {
+  max-width: 24em;
+  font: 600 clamp(21px, 2.5vw, 30px)/1.4 var(--serif);
+  color: var(--ink);
+}
+.about-r p:not(.lead) { max-width: 38em; color: var(--muted); }
+
+.quote {
+  position: relative;
+  margin: 34px 0 0;
+  padding: 6px 0 6px 28px;
+  font: italic 600 clamp(20px, 2.2vw, 27px)/1.4 var(--serif);
+  color: var(--maroon);
+}
+.quote::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: var(--red);
+  transform-origin: top;
+  transition: transform .9s .2s var(--ease);
+}
+.quote.hide::before { transform: scaleY(0); }
+
+.values {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap);
+  margin: clamp(54px, 8vw, 96px) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.values li {
+  padding: 22px 0 0;
+  border-top: 2px solid var(--ink);
+  transition: transform .4s var(--ease);
+}
+.values li:hover { transform: translateY(-6px); }
+.vn {
+  display: block;
+  font: 800 clamp(46px, 5vw, 64px)/1 var(--serif);
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--red);
+  transition: color .35s;
+}
+.values li:hover .vn { color: var(--red); }
+.values b { display: block; margin: 8px 0 6px; font: 700 21px var(--serif); }
+.values span { font-size: 15.5px; color: var(--muted); }
+
+
+/* ==========================================================================
+   GALLERY (3 types, 14 equal photos each, Modeling first)
+   ========================================================================== */
+.gallery { padding: var(--section) 0; background: var(--ink); color: #fff; }
+.gallery .eyebrow { color: #FF6B78; }
+
+.sec-head { margin-bottom: clamp(36px, 5vw, 60px); }
+.sec-head h2 { font-size: clamp(38px, 5.6vw, 76px); font-weight: 800; }
+.sec-head p { max-width: 34em; margin: 14px 0 0; font-size: 1.08em; color: var(--muted); }
+.gallery .sec-head p { color: var(--on-dark); }
+
+.jumps { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.jumps a {
+  position: relative;
+  padding: 9px 20px;
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: 3px;
+  font-size: 14.5px;
+  font-weight: 500;
+  transition: border-color .3s;
+}
+.jumps a::before {
+  content: "";
+  position: absolute;
+  inset: 0 -12px;
+  z-index: -1;
+  background: var(--red);
+  transform: translateX(-105%) skewX(-18deg);
+  transition: transform .45s var(--ease);
+}
+.jumps a:hover { border-color: var(--red); }
+.jumps a:hover::before { transform: translateX(0) skewX(-18deg); }
+
+.gal-block + .gal-block { margin-top: clamp(60px, 9vw, 110px); }
+
+.gal-head {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 8px 24px;
+  margin-bottom: 26px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, .18);
+}
+.gal-head::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 96px;
+  height: 3px;
+  background: var(--red);
+}
+.gn { display: block; margin-bottom: 8px; font: 700 13px var(--sans); letter-spacing: .2em; color: #FF6B78; }
+.gal-head h3 {
+  font-size: clamp(46px, 8vw, 108px);
+  font-weight: 800;
+  line-height: .9;
+  text-transform: uppercase;
+  letter-spacing: -.02em;
+}
+.gal-head p { margin: 0; max-width: 17em; text-align: right; font-size: 15px; color: var(--on-dark); }
+.gal-head p b { display: block; margin-top: 6px; font: 700 13px var(--sans); letter-spacing: .14em; color: #fff; }
+
+/* every tile has exactly the same size (4:5) */
+.pgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); }
+
+.tile {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 4px;
+  background: var(--ink-2);
+  color: #fff;
+  font: inherit;
+  text-align: center;
+}
+.tile img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .9s var(--ease);
+}
+.tile.has-img { cursor: zoom-in; }
+.tile.has-img:hover img,
+.tile.has-img:focus-visible img { transform: scale(1.07); }
+
+/* empty box (shown until you paste an image link) */
+.tile.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px;
+  border: 1px dashed rgba(255, 255, 255, .26);
+}
+.tile.empty::before {
+  content: "";
+  width: 34px;
+  height: 34px;
+  opacity: .55;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='6' width='18' height='14' rx='2'/%3E%3Ccircle cx='12' cy='13' r='3.5'/%3E%3Cpath d='M8 6l1.5-2.5h5L16 6'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.tile.empty b { font-size: 14px; font-weight: 600; }
+.tile.empty small { font-size: 12.5px; color: var(--on-dark); }
+
+.more { margin: clamp(48px, 7vw, 80px) 0 0; text-align: center; }
+.gallery .btn.line { color: #fff; border-color: rgba(255, 255, 255, .45); }
+.gallery .btn.line::before { background: var(--red); }
+.gallery .btn.line:hover { border-color: var(--red); }
+
+/* photo viewer */
+.lb {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 24px;
+  background: rgba(6, 6, 10, .95);
+  animation: fade .3s ease;
+}
+.lb[hidden] { display: none; }
+@keyframes fade { from { opacity: 0; } }
+.lb img { max-width: 92vw; max-height: 78vh; object-fit: contain; border-radius: 4px; }
+.lb p { margin: 0; color: #fff; font-weight: 500; text-align: center; }
+.lb button {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .14);
+  color: #fff;
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background .25s;
+}
+.lb button:hover { background: var(--red); }
+.lb-x { top: max(18px, env(safe-area-inset-top)); right: 18px; }
+.lb-p { left: 18px; top: 50%; }
+.lb-n { right: 18px; top: 50%; }
+
+
+/* ==========================================================================
+   SERVICES (3 big colour blocks: Modeling cream, Events black, Studio red)
+   ========================================================================== */
+.services-intro { padding: var(--section) 0 clamp(40px, 5vw, 64px); }
+.services-intro .sec-head { margin: 0; }
+
+.svc { position: relative; padding: clamp(56px, 8vw, 104px) 0; }
+.svc .wrap {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: clamp(32px, 6vw, 96px);
+  align-items: start;
+}
+
+/* colour themes for the three blocks */
+.svc.t-light { background: #fff;       --tx: var(--ink); --mt: var(--muted);  --ln: var(--line);              --ac: var(--red);  --no: var(--red);  --hv: var(--blush); }
+.svc.t-dark  { background: var(--ink); --tx: #fff;       --mt: var(--on-dark); --ln: rgba(255, 255, 255, .16); --ac: #FF6B78;     --no: rgba(255, 255, 255, .55); --hv: rgba(255, 255, 255, .07); }
+.svc.t-red   { background: var(--red); --tx: #fff;       --mt: rgba(255, 255, 255, .9); --ln: rgba(255, 255, 255, .34); --ac: var(--ink); --no: rgba(255, 255, 255, .7); --hv: rgba(0, 0, 0, .15); }
+.svc { color: var(--tx); }
+
+.svc-side { position: sticky; top: 110px; }
+.svc-no {
+  display: block;
+  font: 800 clamp(96px, 14vw, 190px)/.8 var(--serif);
+  color: transparent;
+  -webkit-text-stroke: 2px var(--no);
+  transition: color .5s;
+}
+.svc:hover .svc-no { color: var(--no); }
+.svc h3 { margin: 22px 0 14px; font-size: clamp(30px, 4vw, 52px); font-weight: 800; }
+.svc-side p { max-width: 24em; color: var(--mt); }
+
+.svc-list { margin: 0; padding: 0; list-style: none; border-top: 2px solid var(--tx); }
+.svc-list li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 4px 12px;
+  padding: 21px 14px;
+  border-bottom: 1px solid var(--ln);
+  transition: background .3s, padding .4s var(--ease);
+}
+.svc-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--ac);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform .4s var(--ease);
+}
+.svc-list li:hover { padding-left: 26px; background: var(--hv); }
+.svc-list li:hover::before { transform: scaleY(1); }
+.svc-list .i { padding-top: 4px; font: 700 13px var(--sans); letter-spacing: .06em; color: var(--ac); }
+.svc-list b { font: 700 clamp(18px, 1.8vw, 22px)/1.25 var(--serif); }
+.svc-list span:last-child { grid-column: 2; font-size: 15px; line-height: 1.55; color: var(--mt); }
+
+
+/* ==========================================================================
+   CONTACT + FOOTER
+   ========================================================================== */
+.contact { padding: var(--section) 0 0; background: var(--ink); color: #fff; overflow: hidden; }
+.contact-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: clamp(36px, 6vw, 90px);
+  align-items: start;
+}
+.contact .eyebrow { color: #FF6B78; }
+.contact h2 { font-size: clamp(42px, 7vw, 100px); font-weight: 800; line-height: .98; }
+.contact h2 em { font-style: normal; color: var(--red); }
+.contact-lead { max-width: 26em; margin: 26px 0 30px; color: var(--on-dark); font-size: 1.08em; }
+
+.contact-rows { margin: 0; padding: 0; list-style: none; border-top: 1px solid rgba(255, 255, 255, .18); }
+.crow {
+  position: relative;
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  min-height: 96px;
+  padding: 22px 12px;
+  overflow: hidden;
+  isolation: isolate;
+  border-bottom: 1px solid rgba(255, 255, 255, .18);
+  transition: padding .4s var(--ease);
+}
+.crow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--red);
+  transform: translateX(-102%);
+  transition: transform .5s var(--ease);
+}
+.crow:hover { padding-left: 24px; }
+.crow:hover::before { transform: none; }
+.crow .ic {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 1.5px solid rgba(255, 255, 255, .35);
+  border-radius: 50%;
+  transition: border-color .3s, background .3s;
+}
+.crow:hover .ic { border-color: #fff; background: rgba(255, 255, 255, .12); }
+.crow svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.crow svg.fill { fill: currentColor; stroke: none; }
+.crow small { display: block; margin-bottom: 5px; font: 700 11.5px var(--sans); letter-spacing: .18em; text-transform: uppercase; color: #FF6B78; transition: color .3s; }
+.crow:hover small { color: #fff; }
+.crow b { display: block; font: 600 clamp(17px, 1.5vw, 20px)/1.3 var(--sans); letter-spacing: .01em; overflow-wrap: anywhere; }
+@media (min-width: 641px) { .crow b { white-space: nowrap; overflow-wrap: normal; } }
+.crow .go { font-size: 24px; transition: transform .35s var(--ease); }
+.crow:hover .go { transform: translateX(6px); }
+
+.follow { margin-top: 38px; }
+.follow h4 { margin: 0 0 16px; font: 700 12.5px var(--sans); letter-spacing: .2em; text-transform: uppercase; color: var(--on-dark); }
+.social { display: flex; flex-wrap: wrap; gap: 12px; }
+.social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 20px 11px 14px;
+  border: 1.5px solid rgba(255, 255, 255, .3);
+  border-radius: 99px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: background .3s, border-color .3s, transform .35s var(--ease);
+}
+.social a:hover { background: var(--red); border-color: var(--red); transform: translateY(-4px); }
+.social svg { width: 22px; height: 22px; fill: currentColor; }
+.social svg.stroke { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.social a[hidden] { display: none; }
+
+/* office address + small square map + GST */
+.office {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr clamp(220px, 22vw, 280px);
+  gap: clamp(28px, 4vw, 64px);
+  align-items: start;
+  margin-top: clamp(48px, 7vw, 80px);
+  padding-top: clamp(32px, 4vw, 48px);
+  border-top: 1px solid rgba(255, 255, 255, .18);
+}
+.o-col small { display: block; margin-bottom: 14px; font: 700 12px var(--sans); letter-spacing: .2em; text-transform: uppercase; color: #FF6B78; }
+.office address { margin: 0; font: 600 clamp(19px, 2vw, 24px)/1.45 var(--serif); font-style: normal; white-space: pre-line; overflow-wrap: anywhere; }
+.office .gst { display: block; font: 700 clamp(19px, 2vw, 24px)/1.3 var(--serif); letter-spacing: .06em; overflow-wrap: anywhere; }
+.office .dir { display: inline-block; margin-top: 20px; font-weight: 600; font-size: 15px; color: #fff; border-bottom: 1.5px solid var(--red); transition: color .25s, border-color .25s; }
+.office .dir:hover { color: #FF6B78; border-color: #FF6B78; }
+.map-sq {
+  justify-self: end;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, .25);
+  border-radius: 4px;
+  background: var(--ink-2);
+}
+.map-sq { position: relative; }
+.map-sq iframe { display: block; width: 100%; height: 100%; border: 0; }
+.map-open {
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  padding: 6px 10px;
+  border-radius: 3px;
+  background: rgba(11, 11, 16, .85);
+  color: #fff;
+  font: 600 12px var(--sans);
+  transition: background .25s;
+}
+.map-open:hover { background: var(--red); }
+
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  margin-top: clamp(54px, 8vw, 96px);
+  padding: 26px 0 calc(28px + env(safe-area-inset-bottom));
+  border-top: 1px solid rgba(255, 255, 255, .16);
+  font-size: 14px;
+  color: var(--on-dark);
+}
+.foot .brand { color: #fff; }
+.foot .top-link { transition: color .25s, transform .3s var(--ease); }
+.foot .top-link:hover { color: #fff; transform: translateY(-3px); }
+
+/* floating WhatsApp button */
+.wa {
+  position: fixed;
+  right: max(18px, env(safe-area-inset-right));
+  bottom: max(18px, env(safe-area-inset-bottom));
+  z-index: 150;
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .3);
+  transition: transform .3s var(--ease), background .3s;
+}
+.wa svg { width: 30px; height: 30px; fill: currentColor; }
+.wa::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid #25D366;
+  animation: ping 3.2s infinite;
+}
+.wa::after {
+  content: "Chat on WhatsApp";
+  position: absolute;
+  right: 72px;
+  padding: 8px 14px;
+  border-radius: 3px;
+  background: var(--ink);
+  color: #fff;
+  font: 500 14px var(--sans);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(8px);
+  transition: opacity .25s, transform .25s;
+  pointer-events: none;
+}
+.wa:hover, .wa:focus-visible { transform: scale(1.08); background: #1DA851; }
+.wa:hover::after, .wa:focus-visible::after { opacity: 1; transform: none; }
+@keyframes ping { 0% { transform: scale(1); opacity: .7; } 70%, 100% { transform: scale(1.35); opacity: 0; } }
+
+
+/* ==========================================================================
+   SCROLL REVEAL (content is visible by default; the script only hides items
+   that are below the screen and fades them in when you reach them)
+   ========================================================================== */
+.rv { transition: opacity .8s var(--ease), transform .8s var(--ease); transition-delay: var(--d, 0s); }
+.rv.hide { opacity: 0; transform: translateY(26px); }
+
+
+/* ==========================================================================
+   RESPONSIVE: laptops, tablets and phones
+   ========================================================================== */
+@media (min-width: 901px) {
+  /* gentle stagger in the photo grid (tiles stay the same size) */
+  .pgrid { padding-bottom: 30px; }
+  .pgrid .tile:nth-child(3n+2) { margin-top: 30px; }
+}
+
+@media (min-width: 1700px) {
+  html { font-size: 112%; }
+  .wrap { max-width: 1400px; }
+}
+
+@media (max-width: 900px) {
+  .menu { display: block; }
+  .nav ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 6px var(--side) 22px;
+    background: var(--cream);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 18px 30px rgba(11, 11, 16, .12);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity .25s, transform .3s var(--ease), visibility .25s;
+  }
+  .nav ul.open { opacity: 1; visibility: visible; transform: none; }
+  .nav li a:not(.btn) { display: block; padding: 15px 0; font-size: 18px; border-bottom: 1px solid var(--line); }
+  .nav li a:not(.btn)::after { display: none; }
+  .nav li .btn { width: 100%; margin-top: 14px; }
+
+  .hero-grid, .about-grid, .svc .wrap, .contact-grid { grid-template-columns: 1fr; }
+  .office { grid-template-columns: 1fr 1fr; }
+  .office .o-col:first-child { grid-column: 1 / -1; }
+  .map-sq { grid-column: 1 / -1; justify-self: start; max-width: 340px; }
+  .about-l, .svc-side { position: static; }
+  .values { grid-template-columns: repeat(2, 1fr); row-gap: 30px; }
+  .pgrid { grid-template-columns: repeat(2, 1fr); }
+  .gal-head { grid-template-columns: 1fr; }
+  .gal-head p { text-align: left; }
+  .svc-side p { max-width: 34em; }
+}
+
+@media (max-width: 640px) {
+  .hero-cta .btn, .more .btn { width: 100%; }
+  .ebars a { min-height: 96px; }
+  .svc-list li { grid-template-columns: 34px 1fr; padding: 18px 8px; }
+  .svc-list li:hover { padding-left: 16px; }
+  .crow { grid-template-columns: 46px 1fr auto; gap: 14px; padding: 18px 6px; }
+  .crow .ic { width: 46px; height: 46px; }
+  .foot { flex-direction: column; align-items: flex-start; }
+  .office { grid-template-columns: 1fr; gap: 26px; }
+  .map-sq { max-width: none; justify-self: stretch; }
+  .lb-p, .lb-n { top: auto; bottom: 22px; }
+  .lb-p { left: 22px; }
+  .lb-n { right: 22px; }
+  .wa::after { display: none; }
+}
+
+@media (max-width: 400px) {
+  .brand b { font-size: 24px; }
+  .brand svg { width: 22px; height: 17px; }
+  .values { grid-template-columns: 1fr; }
+  .pgrid { gap: 10px; }
+  .tile.empty b { font-size: 12.5px; }
+  .tile.empty small { font-size: 11.5px; }
+  .social a { padding: 10px 16px 10px 12px; }
+}
+
+@media (max-width: 340px) {
+  .pgrid { grid-template-columns: 1fr; }
+}
+
+@media (max-height: 480px) and (orientation: landscape) {
+  .lb img { max-height: 68vh; }
+}
+
+/* people who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .ln > span { transform: none; }
+  .squig { stroke-dashoffset: 0; }
+  .rv.hide { opacity: 1; transform: none; }
+  .ticker-track { animation: none; }
+}
+</style>
+</head>
+
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ======================================================================= -->
+<!-- ===== PAGE CONTENT (edit the words below) ============================= -->
+<!-- ======================================================================= -->
+
+<!-- ---------- MENU ---------- -->
+<header class="nav" id="top">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Estilo home">
+      <span class="logo-slot" data-logo="nav"></span>
+    </a>
+    <button class="menu" aria-expanded="false" aria-controls="navlist" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <nav aria-label="Main menu">
+      <ul id="navlist">
+        <li><a href="#about" data-nav="about">Our Essence</a></li>
+        <li><a href="#gallery" data-nav="gallery">The Showcase</a></li>
+        <li><a href="#services" data-nav="services">Services</a></li>
+        <li><a href="#contact" data-nav="contact">Get in Touch</a></li>
+ 
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ==================== HERO (words only) ==================== -->
+  <section class="hero" data-nav="about">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow up">Modeling · Events · Studio</span>
+        <h1>
+          <span class="ln"><span>Faces<span class="dot">.</span></span></span>
+          <span class="ln"><span>Stages<span class="dot">.</span></span></span>
+          <span class="ln"><span>Stories<span class="dot">.</span></span></span>
+          <svg class="squig" viewBox="0 0 240 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 9C30 2 52 12 82 6s54-5 80 1 52 4 75-2"/></svg>
+        </h1>
+        <p class="hero-lead up" style="animation-delay:.7s">From the runway to the reception hall, from the first frame to the final cut.</p>
+        <p class="hero-text up" style="animation-delay:.85s">Estilo puts the right faces in front of your audience and the right team behind your camera. One agency, one phone call, nothing left to chance.</p>
+        <div class="hero-cta up" style="animation-delay:1s">
+          <a class="btn" href="#gallery">See our work <i>&rarr;</i></a>
+         </div>
+        <div class="cue up" style="animation-delay:1.2s"><i></i>Scroll</div>
+      </div>
+
+      <!-- the three bars of the logo, as three links -->
+      <ul class="ebars">
+        <li><a href="#g-modeling"><span class="k">01</span><b>Faces</b><i>&rarr;</i><small>Modeling</small></a></li>
+        <li><a href="#g-events"><span class="k">02</span><b>Stages</b><i>&rarr;</i><small>Events</small></a></li>
+        <li><a href="#g-studio"><span class="k">03</span><b>Stories</b><i>&rarr;</i><small>Studio</small></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- slow moving list of what we do (copied automatically by the script) -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Runway Models</span><span>International Hostesses</span><span>Anchors &amp; Emcees</span><span>DJs</span><span>Dance Troupes</span><span>Live Bands</span><span>Fire Acts</span><span>LED Shows</span><span>Aerial Acts</span><span>E-commerce Shoots</span><span>Portfolio Shoots</span><span>Music Videos</span><span>Studio on Rent</span><span>Fashion Campaigns</span>
+    </div>
+  </div>
+
+
+  <!-- ==================== ABOUT (content only) ==================== -->
+  <section class="about" id="about" data-nav="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-l rv">
+          <span class="eyebrow">About us</span>
+          <h2>Three crafts.<br><span>One team.</span></h2>
+        </div>
+        <div class="about-r">
+          <p class="lead rv">Estilo is a modelling, event entertainment and studio production agency. We supply professional models, create memorable live entertainment and produce fashion, brand and music content.</p>
+          <p class="rv">Estilo began with a simple observation: good talent often gets lost between the booking and the show. Models arrive without a clear brief, events have strong ideas but nobody steering them, and shoots lack a team that understands both. We built an agency that handles all of it properly.</p>
+          <p class="rv">Because the same people cast the models, book the artists and run the studio, nothing is lost in translation. You speak to us once, and we take care of the rest.</p>
+          <blockquote class="quote rv">We would rather be remembered for how smooth it felt than how loud we were about it.</blockquote>
+        </div>
+      </div>
+
+      <ul class="values">
+        <li class="rv"><span class="vn">01</span><b>Reliable</b><span>We arrive early, prepared and ready to work.</span></li>
+        <li class="rv" style="--d:.08s"><span class="vn">02</span><b>Professional</b><span>Every model and artist is briefed before the day.</span></li>
+        <li class="rv" style="--d:.16s"><span class="vn">03</span><b>Responsive</b><span>One point of contact with quick, clear replies.</span></li>
+        <li class="rv" style="--d:.24s"><span class="vn">04</span><b>Detail-minded</b><span>From styling to sound checks, we manage the small things.</span></li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- ==================== GALLERY ==================== -->
+  <!-- Photos are not typed here. They come from the PHOTOS list at the top of this file. -->
+  <section class="gallery" id="gallery" data-nav="gallery">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow"></span>
+        <h2>Showcase</h2>
+        <p></p>
+        <div class="jumps">
+          <a href="#g-modeling">Modeling</a>
+          <a href="#g-studio">Studio</a>
+          <a href="#g-events">Events</a>
+        </div>
+      </div>
+
+      <div class="gal-block" id="g-modeling">
+        <div class="gal-head rv">
+          <div><span class="gn">01</span><h3>Modeling</h3></div>
+          <p>Runway, editorial, commercial and brand faces.<b></b></p>
+        </div>
+        <div class="pgrid" id="grid-modeling"></div>
+      </div>
+
+      <div class="gal-block" id="g-studio">
+        <div class="gal-head rv">
+          <div><span class="gn">02</span><h3>Studio</h3></div>
+          <p>Fashion, product and music production.<b></b></p>
+        </div>
+        <div class="pgrid" id="grid-studio"></div>
+      </div>
+
+      <div class="gal-block" id="g-events">
+        <div class="gal-head rv">
+          <div><span class="gn">03</span><h3>Events</h3></div>
+          <p>Live entertainment, stage acts and celebrations.<b></b></p>
+        </div>
+        <div class="pgrid" id="grid-events"></div>
+      </div>
+
+      <p class="more rv"><a class="btn line" href="#" data-social="instagram" target="_blank" rel="noopener">See more on Instagram <i>&rarr;</i></a></p>
+
+      <noscript><p style="color:#BFBCC6">Please turn on JavaScript to see the gallery photos.</p></noscript>
+    </div>
+  </section>
+
+
+  <!-- ==================== SERVICES ==================== -->
+  <section class="services-intro" id="services" data-nav="services">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <span class="eyebrow">Services</span>
+        <h2>What we offer</h2>
+        <p>Three divisions, one dependable team. Book one service or combine them.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- 01 MODELING ---------- -->
+  <section class="svc t-light" id="svc-modeling" data-nav="services">
+    <div class="wrap">
+      <div class="svc-side rv">
+        <span class="svc-no">01</span>
+        <h3>Modeling Services</h3>
+        <p>Professional models for runways, shoots, campaigns and brand activations, briefed and ready before the day.</p>
+      </div>
+      <ol class="svc-list rv">
+        <li><span class="i">01</span><b>Runway &amp; Fashion Shows</b><span>Confident walkers who hit their marks and carry a designer's vision.</span></li>
+        <li><span class="i">02</span><b>Editorial &amp; Catalogue Models</b><span>Faces for magazines, lookbooks and catalogues who take direction well.</span></li>
+        <li><span class="i">03</span><b>Commercial &amp; Ad Models</b><span>Relatable, camera-ready people for ads, print and ad films.</span></li>
+        <li><span class="i">04</span><b>Promotional Models &amp; Brand Ambassadors</b><span>Polished faces who represent your brand at launches, expos and stores.</span></li>
+        <li><span class="i">05</span><b>Showroom &amp; Fit Models</b><span>Reliable models for fittings, showrooms and trade presentations.</span></li>
+        <li><span class="i">06</span><b>Bridal &amp; Wedding Models</b><span>Models for bridal shoots, wedding fashion shows and showcases.</span></li>
+        <li><span class="i">07</span><b>New Face Development</b><span>Guidance and test shoots to help new models build a portfolio.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ---------- 02 EVENTS ---------- -->
+  <section class="svc t-dark" id="svc-events" data-nav="services">
+    <div class="wrap">
+      <div class="svc-side rv">
+        <span class="svc-no">02</span>
+        <h3>Events &amp; Entertainment Services</h3>
+        <p>Live entertainment and event talent for corporate, wedding and private occasions, planned and delivered by one team.</p>
+      </div>
+      <ol class="svc-list rv">
+        <li><span class="i">01</span><b>International Hostesses</b><span>Professional, well-presented hostesses for events and brand activations.</span></li>
+        <li><span class="i">02</span><b>Anchors / Emcees</b><span>Confident hosts who keep your programme flowing and your guests engaged.</span></li>
+        <li><span class="i">03</span><b>DJs</b><span>Sets matched to your crowd, venue and the mood of the night.</span></li>
+        <li><span class="i">04</span><b>Dance Troupes</b><span>Choreographed group performances for stages, entries and celebrations.</span></li>
+        <li><span class="i">05</span><b>Live Bands</b><span>Live music from relaxed background sets to full party performances.</span></li>
+        <li><span class="i">06</span><b>Belly Dancers</b><span>Elegant, high-energy performances for weddings and private events.</span></li>
+        <li><span class="i">07</span><b>Fire Acts</b><span>Dramatic fire performances by trained artists.</span></li>
+        <li><span class="i">08</span><b>LED Shows</b><span>Glowing LED costumes and props for striking night-time entertainment.</span></li>
+        <li><span class="i">09</span><b>Aerial Acts</b><span>Graceful performances in the air that become the centrepiece of the event.</span></li>
+        <li><span class="i">10</span><b>Carnival &amp; Theme Entertainment</b><span>Themed characters and festive acts that bring a carnival feel to your event.</span></li>
+        <li><span class="i">11</span><b>Corporate, Wedding &amp; Private Event Artists</b><span>The right artists for corporate programmes, weddings and private parties.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ---------- 03 STUDIO ---------- -->
+  <section class="svc t-red" id="svc-studio" data-nav="services">
+    <div class="wrap">
+      <div class="svc-side rv">
+        <span class="svc-no">03</span>
+        <h3>Fashion &amp; Production Services</h3>
+        <p>Photo and video production for fashion, e-commerce, brands and music, plus our studio for your own shoots.</p>
+      </div>
+      <ol class="svc-list rv">
+        <li><span class="i">01</span><b>E-commerce Shoots</b><span>Clean, consistent product and model photos made for online stores.</span></li>
+        <li><span class="i">02</span><b>Portfolio Shoots</b><span>Strong portfolios for models, actors and creators.</span></li>
+        <li><span class="i">03</span><b>Brand &amp; Product Shoots</b><span>Visuals that show off your product and tell your brand story.</span></li>
+        <li><span class="i">04</span><b>Models for Brands</b><span>Faces matched to your brand for shoots, campaigns and content.</span></li>
+        <li><span class="i">05</span><b>Music Video Production</b><span>Concept, shoot and edit for artists and music releases.</span></li>
+        <li><span class="i">06</span><b>Studio on Rent</b><span>Book our studio for your own shoot or production.</span></li>
+        <li><span class="i">07</span><b>Fashion Campaigns &amp; Content Creation</b><span>Campaign visuals and social content for fashion brands.</span></li>
+      </ol>
+    </div>
+  </section>
+
+
+  <!-- ==================== CONTACT ==================== -->
+  <section class="contact" id="contact" data-nav="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="rv">
+          <span class="eyebrow">Contact</span>
+          <h2>Let's make something <em>unforgettable.</em></h2>
+          <p class="contact-lead">Tell us your date, your idea and your city. We will reply with a plan, not a pitch.</p>
+                  </div>
+
+        <div class="rv" style="--d:.1s">
+          <ul class="contact-rows">
+            <li>
+              <a class="crow" href="+919811211149" data-tel>
+                <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg></span>
+                <span><small>Call us</small><b>+91 9811211149</b></span>
+                <span class="go" aria-hidden="true">&rarr;</span>
+              </a>
+            </li>
+            <li>
+              <a class="crow" href="mailto:Info@estilosentertainment.com" data-mail>
+                <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg></span>
+                <span><small>Email us</small><b>Info@estilosentertainment.com</b></span>
+                <span class="go" aria-hidden="true">&rarr;</span>
+              </a>
+            </li>
+            <li>
+              <a class="crow" href="https://wa.me/+919811211149/" data-wa data-msg="Hello Estilo, I would like to discuss an upcoming project.">
+                <span class="ic"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.7-3-1.3-4.9-4.3-5-4.5-.1-.2-1.2-1.6-1.2-3s.8-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1 2.2 1.3 2.5 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.5-.2.7-.1l2.1 1c.3.1.5.2.5.4.1.1.1.7-.1 1.4Z"/></svg></span>
+                <span><small>WhatsApp</small><b>Message us anytime</b></span>
+                <span class="go" aria-hidden="true">&rarr;</span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="follow">
+            <h4>Follow us</h4>
+            <div class="social">
+              <a href="#" data-social="instagram" aria-label="Instagram">
+                <svg class="stroke" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>Instagram
+              </a>
+              <a href="#" data-social="facebook" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H7.6v3h2.5V21h3.4Z"/></svg>Facebook
+              </a>
+              <a href="#" data-social="youtube" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8ZM10 15V9l5.2 3L10 15Z"/></svg>YouTube
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- office address, GST and map: full-width band under the contact columns -->
+      <div class="office rv">
+        <div class="o-col">
+          <small>Visit our office</small>
+          <address data-address></address>
+          <a class="dir" href="#" data-directions target="_blank" rel="noopener">Get directions &rarr;</a>
+        </div>
+        <div class="o-col" data-gst-row hidden>
+          <small>GST number</small>
+          <b class="gst" data-gst></b>
+        </div>
+        <div class="map-sq">
+          <iframe data-map title="Estilo office location map" allowfullscreen></iframe>
+          <a class="map-open" href="#" data-directions target="_blank" rel="noopener">Open in Google Maps &nearr;</a>
+        </div>
+      </div>
+
+      <div class="foot">
+        <a class="brand" href="#top" aria-label="Estilo home">
+          <span class="logo-slot" data-logo="footer"></span>
+        </a>
+        <span>&copy; <span id="yr">2026</span> Estilo Entertainment. All rights reserved.</span>
+        <a class="top-link" href="#top">Back to top &uarr;</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- floating WhatsApp button -->
+<a class="wa" href="#" data-wa data-msg="Hello Estilo, I would like to discuss an upcoming project." aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-1.9 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.7-3-1.3-4.9-4.3-5-4.5-.1-.2-1.2-1.6-1.2-3s.8-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.5c-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1 2.2 1.3 2.5 1.5.3.1.5.1.7-.1l.9-1.1c.2-.3.5-.2.7-.1l2.1 1c.3.1.5.2.5.4.1.1.1.7-.1 1.4Z"/></svg>
+</a>
+
+<!-- photo viewer (opens when a gallery photo is clicked) -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+  <button class="lb-x" aria-label="Close">&times;</button>
+  <button class="lb-p" aria-label="Previous photo">&lsaquo;</button>
+  <img id="lbImg" alt="">
+  <p id="lbCap"></p>
+  <button class="lb-n" aria-label="Next photo">&rsaquo;</button>
+</div>
+
+
+<!-- ======================================================================= -->
+<!-- ===== JAVASCRIPT (menu, animations, gallery). No need to edit. ========= -->
+<!-- ======================================================================= -->
+<script>
+(function () {
+  'use strict';
+
+  var $  = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return [].slice.call((c || document).querySelectorAll(s)); };
+  var site = window.SITE || {};
+  var photos = window.PHOTOS || {};
+  var PER_TYPE = 14;
+
+  /* ---------- Contact details and WhatsApp links ---------- */
+  function waLink(msg) {
+    return 'https://wa.me/' + String(site.whatsapp || '').replace(/\D/g, '') + (msg ? '?text=' + encodeURIComponent(msg) : '');
+  }
+  $$('[data-wa]').forEach(function (a) {
+    a.href = waLink(a.getAttribute('data-msg'));
+    a.target = '_blank';
+    a.rel = 'noopener';
+  });
+  $$('[data-tel]').forEach(function (a) { a.href = 'tel:' + String(site.phone || '').replace(/[^+\d]/g, ''); });
+  $$('[data-tel-text]').forEach(function (e) { e.textContent = site.phone || ''; });
+  $$('[data-mail]').forEach(function (a) { a.href = 'mailto:' + (site.email || ''); });
+  $$('[data-mail-text]').forEach(function (e) { e.textContent = site.email || ''; });
+  $$('[data-social]').forEach(function (a) {
+    var url = site[a.getAttribute('data-social')];
+    if (url) { a.href = url; a.target = '_blank'; a.rel = 'noopener'; }
+    else { a.hidden = true; }
+  });
+  /* ---------- Office address, GST and live map ---------- */
+  var addr = $('[data-address]'); if (addr) addr.textContent = String(site.address || '').replace(/\\n/g, '\n');
+  if (site.gst) { var g = $('[data-gst]'); if (g) g.textContent = site.gst; var gr = $('[data-gst-row]'); if (gr) gr.hidden = false; }
+  var mapQ = encodeURIComponent(site.mapQuery || String(site.address || '').replace(/\n/g, ', '));
+  var mapEl = $('[data-map]'); if (mapEl) mapEl.src = site.mapEmbed || ('https://maps.google.com/maps?q=' + mapQ + '&t=&z=16&ie=UTF8&iwloc=&output=embed');
+  $$('[data-directions]').forEach(function (d) { d.href = site.mapLink || ('https://www.google.com/maps/search/?api=1&query=' + mapQ); });
+  /* ---------- Logo (top menu and footer) ---------- */
+  $$('[data-logo]').forEach(function (slot) {
+    var src = slot.getAttribute('data-logo') === 'footer' ? (site.logoFooter || site.logo) : site.logo;
+    function empty() { slot.className = 'logo-slot empty'; slot.textContent = 'Add logo'; }
+    if (!src) { empty(); return; }
+    var im = new Image();
+    im.alt = 'Estilo';
+    im.addEventListener('error', empty);
+    im.src = src;
+    slot.appendChild(im);
+  });
+  var yr = $('#yr'); if (yr) yr.textContent = new Date().getFullYear();
+
+  /* ---------- Ticker: copy the list once so it loops without a gap ---------- */
+  var track = $('.ticker-track');
+  if (track) track.innerHTML += track.innerHTML;
+
+  /* ---------- Menu ---------- */
+  var nav = $('.nav'), menu = $('.menu'), list = $('#navlist');
+  function closeMenu() { menu.setAttribute('aria-expanded', 'false'); list.classList.remove('open'); }
+  menu.addEventListener('click', function () {
+    var open = menu.getAttribute('aria-expanded') === 'true';
+    menu.setAttribute('aria-expanded', String(!open));
+    list.classList.toggle('open', !open);
+  });
+  list.addEventListener('click', function (e) { if (e.target.closest('a')) closeMenu(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+  window.addEventListener('resize', function () { if (window.innerWidth > 900) closeMenu(); });
+
+  /* ---------- Shadow on the menu + highlight the current section ---------- */
+  var navLinks = $$('.nav li a[data-nav]');
+  var secs = $$('section[data-nav]');
+  function onScroll() {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+    var cur = '';
+    secs.forEach(function (s) { if (s.getBoundingClientRect().top <= 140) cur = s.getAttribute('data-nav'); });
+    navLinks.forEach(function (a) {
+      if (a.getAttribute('data-nav') === cur) a.setAttribute('aria-current', 'true');
+      else a.removeAttribute('aria-current');
+    });
+  }
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ---------- Gallery: builds 14 equal tiles for each type from the PHOTOS list ---------- */
+  var types = [
+    { key: 'modeling', label: 'Modeling' },
+    { key: 'studio',   label: 'Studio' },
+    { key: 'events',   label: 'Events' }
+  ];
+  var viewer = { list: [], index: 0, opener: null };
+
+  function emptyBox(tile, title, text) {
+    tile.className = 'tile empty';
+    tile.removeAttribute('aria-label');
+    tile.innerHTML = '';
+    var b = document.createElement('b'); b.textContent = title;
+    var s = document.createElement('small'); s.textContent = text;
+    tile.appendChild(b); tile.appendChild(s);
+  }
+
+  types.forEach(function (t) {
+    var grid = $('#grid-' + t.key);
+    if (!grid) return;
+    var given = photos[t.key] || [];
+    for (var i = 0; i < PER_TYPE; i++) {
+      (function (n) {
+        var link = String(given[n] || '').trim();
+        var num = (n + 1 < 10 ? '0' : '') + (n + 1);
+        var name = t.label + ' photo ' + (n + 1);
+        var tile;
+        if (link) {
+          tile = document.createElement('button');
+          tile.type = 'button';
+          tile.className = 'tile has-img rv';
+          tile.setAttribute('aria-label', 'View ' + name);
+          var img = new Image();
+          img.alt = name; img.decoding = 'async'; img.loading = 'lazy'; img.src = link;
+          img.addEventListener('error', function () {
+            tile.disabled = true;
+            emptyBox(tile, 'Image link not working', name);
+          });
+          tile.appendChild(img);
+          tile.addEventListener('click', function () { openViewer(grid, tile); });
+        } else {
+          tile = document.createElement('div');
+          emptyBox(tile, 'Add image link', name);
+          tile.classList.add('rv');
+        }
+        tile.style.setProperty('--d', (n % 3) * 0.09 + 's');
+        grid.appendChild(tile);
+      })(i);
+    }
+  });
+
+  /* ---------- Photo viewer ---------- */
+  var lb = $('#lb'), lbImg = $('#lbImg'), lbCap = $('#lbCap');
+  function showPhoto() {
+    var it = viewer.list[viewer.index];
+    var img = it.querySelector('img');
+    lbImg.src = img.currentSrc || img.src;
+    lbImg.alt = img.alt;
+    lbCap.textContent = img.alt;
+  }
+  function openViewer(grid, tile) {
+    viewer.list = $$('.tile.has-img', grid);
+    viewer.index = viewer.list.indexOf(tile);
+    viewer.opener = tile;
+    showPhoto();
+    lb.hidden = false;
+    document.body.style.overflow = 'hidden';
+    $('.lb-x', lb).focus();
+  }
+  function closeViewer() {
+    lb.hidden = true;
+    document.body.style.overflow = '';
+    if (viewer.opener) viewer.opener.focus();
+  }
+  function step(d) {
+    if (!viewer.list.length) return;
+    viewer.index = (viewer.index + d + viewer.list.length) % viewer.list.length;
+    showPhoto();
+  }
+  $('.lb-x', lb).addEventListener('click', closeViewer);
+  $('.lb-p', lb).addEventListener('click', function () { step(-1); });
+  $('.lb-n', lb).addEventListener('click', function () { step(1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) closeViewer(); });
+  document.addEventListener('keydown', function (e) {
+    if (lb.hidden) return;
+    if (e.key === 'Escape') closeViewer();
+    if (e.key === 'ArrowLeft') step(-1);
+    if (e.key === 'ArrowRight') step(1);
+  });
+  // swipe left / right on phones
+  var sx = null;
+  lb.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) {
+    if (sx === null) return;
+    var dx = e.changedTouches[0].clientX - sx; sx = null;
+    if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1);
+  }, { passive: true });
+
+  /* ---------- Scroll reveal: only things below the screen are hidden, then fade in ---------- */
+  var items = $$('.rv');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.remove('hide'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    items.forEach(function (el) {
+      if (el.getBoundingClientRect().top > window.innerHeight) { el.classList.add('hide'); io.observe(el); }
+    });
+  }
+})();
+</script>
+</body>
+</html>
